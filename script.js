@@ -37,7 +37,7 @@ navItems.forEach((item) => {
                                 `<h1 class="page-title">代码编辑器</h1>
                                     <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
                                     <textarea id="html-code" placeholder=" " style="width: 80%; height: 300px; margin-bottom: 20px; padding: 10px; font-family: monospace; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
-                                   
+
                                     <button id="preview-button" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">更新预览</button>
                                     <div id="preview" style="width: 80%; height: 400px; border: 1px solid #ccc; border-radius: 5px; background-color: #f4f4f4; margin-top: 20px;"></div>
                                 </div>`;
@@ -66,7 +66,7 @@ navItems.forEach((item) => {
               document.getElementById('preview-button').addEventListener('click', function() {
                 updatePreview();
               });
-              
+
               // 自动显示预览
               updatePreview();
             }
@@ -158,13 +158,13 @@ navItems.forEach((item) => {
                                 </div>
                               `;
                 contentHTML+='<p class="page-title-2">4.1  空白</p>'+
-                                    '<p class="start-content">JavaScript不认为空白空间有意义。空格和换行符可以以任何你可能喜欢的方式添加，即使这是理论上的。</p>'+
+                                    '<p class="start-content">JavaScript通常忽略标记之间多余的空格和换行，但它们并非在任何位置都能随意添加；字符串、正则表达式、自动分号插入和词法边界都可能受影响。</p>'+
                                     '<p class="start-content">在实践中，您很可能会保持一个定义良好的风格，并坚持人们通常使用的风格，并使用链接器或样式工具来强制执行这一点。例如，您可以使用Prettier，它是一个流行的代码格式化工具，它可以自动格式化您的代码以符合您的风格。</p>'+
                                     '<p class="start-content">例如，使用两个字符来缩进</p>'+
                                   '<p class="page-title-2">4.2  区分大小写</p>'+
                                     '<p class="start-content">JavaScript是区分大小写的，这意味着变量名、函数名和对象名是区分大小写的。</p>'+
-                                    '<p class="start-content">例如，变量名“myVariable”和“myvariable”是不同的变量。</p>'+ 
-                                    '<p class="start-content">任何标识符都是如此。</p>'+       
+                                    '<p class="start-content">例如，变量名“myVariable”和“myvariable”是不同的变量。</p>'+
+                                    '<p class="start-content">任何标识符都是如此。</p>'+
                                   '<p class="page-title-2">4.3  值</p>'+
                                     '<p class="start-content">值是JavaScript中的基本构建块。我们定义在源代码中编写的<strong>值</strong>，例如，数字、字符串、布尔值或更高级的构造，如对象字或数组字：</p>'+
                                     '<ul class="start-content care">'+
@@ -178,12 +178,12 @@ navItems.forEach((item) => {
                                   '<p class="page-title-2">4.4  标识符</p>'+
                                     '<p class="start-content">标识符是JavaScript中的基本构建块。我们定义在源代码中编写的<strong>标识符</strong>，例如，变量名、函数名和对象名：</p>'+
                                     '<ul class="start-content care">'+
-                                      '<li>变量名：myVariable、my_variable、my-variable</li>'+
-                                      '<li>函数名：myFunction、my_function、my-function</li>'+
-                                      '<li>对象名：myObject、my_object、my-object</li>'+
+                                      '<li>变量名：myVariable、my_variable、$element</li>'+
+                                      '<li>函数名：calculateTotal、render_page、$</li>'+
+                                      '<li>对象名：userProfile、app_state、_cache</li>'+
                                     '</ul>'+
                                     '<p class="start-content">这些都是JavaScript中的标识符。</p>'+
-                                    '<p class="start-content">标识符是可用于标识变量、函数或对象的字符序列。它可以以字母开头，美元符号$或下划线_，而且它还可以包含数字。使用Unicode，一个字母可以是任何允许的字符，例如，一个表情符号😄。</p>'+
+                                    '<p class="start-content">标识符可用于命名变量、函数或对象属性。它可以以允许的 Unicode 字母、美元符号 $ 或下划线 _ 开头，后续还可包含数字；普通 emoji 通常不能直接作为标识符。</p>'+
                                     '<p class="start-content red">美元符号通常用于引用DOM元素。有些名称是为JavaScript内部使用而保留的，我们不能将它们用作标识符。</p>'+
                                   '<p class="page-title-2">4.5  注释</p>'+
                                     '<p class="start-content">评论是任何程序中最重要的部分之一。在任何编程语言中。它们很重要，因为它们可以让我们注释代码，并添加重要的信息，否则，阅读代码的其他人（或我们自己）将无法获得这些信息。</p>'+
@@ -209,7 +209,7 @@ navItems.forEach((item) => {
                       </div>
                     `;
                   });
-                  
+
                   contentHTML += `
                     <div style="margin-top: 30px; text-align: center;">
                         <button id="view-score-btn" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
@@ -218,7 +218,7 @@ navItems.forEach((item) => {
                     </div>
                     `;
                   contentDiv.innerHTML = contentHTML;
-                
+
                   // 为每个问题添加事件监听器
     setTimeout(() => {
         // 更新分数显示
@@ -228,28 +228,28 @@ navItems.forEach((item) => {
             const progressPercentage = (answeredQuestions.size / questions.length) * 100;
             document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
         }
-        
+
         questions.forEach(question => {
           const form = document.getElementById(`${question.id}-form`);
           if (form) {
             form.addEventListener('submit', function(e) {
               e.preventDefault();
               const selectedAnswer = document.querySelector(`input[name="${question.id}-answer"]:checked`);
-              
+
               // 避免重复计分
               if (selectedAnswer && !answeredQuestions.has(question.id)) {
                 answeredQuestions.add(question.id);
-                
+
                 if (selectedAnswer.value === question.correctAnswer) {
                   userScore += question.points;
                   showResultWindow(`问题${question.id.substring(1)}: 回答正确！\n得分: +${question.points}`, true);
                 } else {
                   showResultWindow(`问题${question.id.substring(1)}: 回答错误，请重试。\n正确答案是: ${question.correctAnswer === 'true' ? '对' : '错'}`, false);
                 }
-                
+
                 // 禁用提交按钮，防止重复提交
                 form.querySelector('button[type="submit"]').disabled = true;
-                
+
                 // 更新分数显示
                 updateScoreDisplay();
               } else if (!selectedAnswer) {
@@ -258,21 +258,21 @@ navItems.forEach((item) => {
             });
           }
         });
-        
+
         // 查看总分按钮事件
         const viewScoreBtn = document.getElementById('view-score-btn');
         if (viewScoreBtn) {
             viewScoreBtn.addEventListener('click', function() {
                 let scoreDetails = `总分: ${userScore}/${totalQuestions}\n\n`;
                 scoreDetails += `完成进度: ${answeredQuestions.size}/${questions.length} 题\n\n`;
-                
+
                 questions.forEach((q, index) => {
-                    const status = answeredQuestions.has(q.id) ? 
-                                  (document.querySelector(`input[name="${q.id}-answer"]:checked`).value === q.correctAnswer ? 
+                    const status = answeredQuestions.has(q.id) ?
+                                  (document.querySelector(`input[name="${q.id}-answer"]:checked`).value === q.correctAnswer ?
                                   "✓ 正确" : "✗ 错误") : "未回答";
                     scoreDetails += `问题 ${index + 1}: ${status}\n`;
                 });
-                
+
                 showScoreSummary(scoreDetails, userScore, totalQuestions);
             });
         }
@@ -408,7 +408,7 @@ navItems.forEach((item) => {
                                       </div>
                                     `;
                                   });
-                                  
+
                                   contentHTML += `
                                     <div style="margin-top: 30px; text-align: center;">
                                       <button id="view-score-btn" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
@@ -416,9 +416,9 @@ navItems.forEach((item) => {
                                       </button>
                                     </div>
                                   `;
-                                  
+
                                   contentDiv.innerHTML = contentHTML;
-                                  
+
                                   // 为每个问题添加事件监听器
                                   setTimeout(() => {
                                     // 更新分数显示
@@ -428,28 +428,28 @@ navItems.forEach((item) => {
                                       const progressPercentage = (answeredQuestions.size / questions.length) * 100;
                                       document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
                                     }
-                                    
+
                                     questions.forEach(question => {
                                       const form = document.getElementById(`${question.id}-form`);
                                       if (form) {
                                         form.addEventListener('submit', function(e) {
                                           e.preventDefault();
                                           const selectedAnswer = document.querySelector(`input[name="${question.id}-answer"]:checked`);
-                                          
+
                                           // 避免重复计分
                                           if (selectedAnswer && !answeredQuestions.has(question.id)) {
                                             answeredQuestions.add(question.id);
-                                            
+
                                             if (selectedAnswer.value === question.correctAnswer) {
                                               userScore += question.points;
                                               showResultWindow(`问题${question.id.substring(1)}: 回答正确！\n得分: +${question.points}`, true);
                                             } else {
                                               showResultWindow(`问题${question.id.substring(1)}: 回答错误。\n正确答案是: ${getCorrectAnswerLabel(question)}`, false);
                                             }
-                                            
+
                                             // 禁用提交按钮，防止重复提交
                                             form.querySelector('button[type="submit"]').disabled = true;
-                                            
+
                                             // 更新分数显示
                                             updateScoreDisplay();
                                           } else if (!selectedAnswer) {
@@ -458,25 +458,25 @@ navItems.forEach((item) => {
                                         });
                                       }
                                     });
-                                    
+
                                     // 查看总分按钮事件
                                     const viewScoreBtn = document.getElementById('view-score-btn');
                                     if (viewScoreBtn) {
                                       viewScoreBtn.addEventListener('click', function() {
                                         let scoreDetails = `总分: ${userScore}/${totalQuestions}\n\n`;
                                         scoreDetails += `完成进度: ${answeredQuestions.size}/${questions.length} 题\n\n`;
-                                        
+
                                         questions.forEach((q, index) => {
-                                          const status = answeredQuestions.has(q.id) ? 
-                                            (document.querySelector(`input[name="${q.id}-answer"]:checked`).value === q.correctAnswer ? 
+                                          const status = answeredQuestions.has(q.id) ?
+                                            (document.querySelector(`input[name="${q.id}-answer"]:checked`).value === q.correctAnswer ?
                                             "✓ 正确" : "✗ 错误") : "未回答";
                                           scoreDetails += `问题 ${index + 1}: ${status}\n`;
                                         });
-                                        
+
                                         showScoreSummary(scoreDetails, userScore, totalQuestions);
                                       });
                                     }
-                                    
+
                                     // 获取正确答案的显示文本
                                     function getCorrectAnswerLabel(question) {
                                       const correctOption = question.options.find(option => option.value === question.correctAnswer);
@@ -500,17 +500,17 @@ function updatePreview() {
     // 检查css-code元素是否存在
     const cssCodeElement = document.getElementById('css-code');
     const cssCode = cssCodeElement ? cssCodeElement.value : '';
-  
+
     const iframe = document.createElement('iframe');
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.border = 'none';
-    
+
     const previewDiv = document.getElementById('preview');
     if (previewDiv) {
       previewDiv.innerHTML = '';
       previewDiv.appendChild(iframe);
-  
+
       const iframeDoc = iframe.contentWindow.document;
       iframeDoc.open();
       iframeDoc.write(htmlCode); // 直接使用完整HTML代码
@@ -535,7 +535,7 @@ function showScoreSummary(details, score, total) {
     resultWindow.style.backgroundColor = '#f8f9fa';
     resultWindow.style.borderColor = '#d6e9c6';
     resultWindow.style.color = '#333';
-    
+
     // 添加标题
     const titleElement = document.createElement('h2');
     titleElement.style.textAlign = 'center';
@@ -543,7 +543,7 @@ function showScoreSummary(details, score, total) {
     titleElement.style.color = score >= total * 0.6 ? '#3c763d' : '#a94442';
     titleElement.textContent = `测试结果: ${score}/${total}`;
     resultWindow.appendChild(titleElement);
-    
+
     // 添加详情
     const detailsElement = document.createElement('pre');
     detailsElement.style.whiteSpace = 'pre-wrap';
@@ -554,7 +554,7 @@ function showScoreSummary(details, score, total) {
     detailsElement.style.borderRadius = '5px';
     detailsElement.textContent = details;
     resultWindow.appendChild(detailsElement);
-    
+
     // 添加关闭按钮
     const closeButton = document.createElement('button');
     closeButton.textContent = '关闭';
@@ -570,7 +570,7 @@ function showScoreSummary(details, score, total) {
       document.body.removeChild(resultWindow);
     };
     resultWindow.appendChild(closeButton);
-    
+
     // 添加到页面
     document.body.appendChild(resultWindow);
 }
@@ -591,25 +591,25 @@ function showScoreSummary(details, score, total) {
     resultWindow.style.zIndex = '1000';
     resultWindow.style.minWidth = '300px';
     resultWindow.style.textAlign = 'center';
-    
+
     // 根据答案正误设置颜色
     if (isCorrect) {
-      resultWindow.style.backgroundColor = '#dff0d8';  
+      resultWindow.style.backgroundColor = '#dff0d8';
       resultWindow.style.borderColor = '#d6e9c6';
       resultWindow.style.color = '#3c763d';
     } else {
-      resultWindow.style.backgroundColor = '#f2dede'; 
+      resultWindow.style.backgroundColor = '#f2dede';
       resultWindow.style.borderColor = '#ebccd1';
       resultWindow.style.color = '#a94442';
     }
-    
+
     // 添加消息
     const messageElement = document.createElement('p');
     messageElement.style.fontSize = '18px';
     messageElement.style.margin = '0 0 15px 0';
     messageElement.textContent = message;
     resultWindow.appendChild(messageElement);
-    
+
     // 添加关闭按钮
     const closeButton = document.createElement('button');
     closeButton.textContent = '关闭';
@@ -625,7 +625,7 @@ function showScoreSummary(details, score, total) {
     resultWindow.appendChild(closeButton);
     // 添加到页面
     document.body.appendChild(resultWindow);
-    
+
     // 点击窗口外部也可以关闭
     document.addEventListener('click', function closeOnClickOutside(event) {
       if (!resultWindow.contains(event.target) && event.target !== resultWindow) {

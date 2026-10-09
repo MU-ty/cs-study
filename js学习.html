@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,27 +25,10 @@
           <li data-page="page6">值</li>
           <li data-page="page7">变量</li>
           <li data-page="page8">类型</li>
-          <li data-page="page9">表达式</li>
-          <li data-page="page10">运算符</li>
-          <li data-page="page11">优先顺序规则</li>
-          <li data-page="page12">比较符</li>
-          <li data-page="page13">条件句</li>
-          <li data-page="page14">数组</li>
-          <li data-page="page15">字符串</li>
-          <li data-page="page16">循环</li>
-          <li data-page="page17">函数</li>
-          <li data-page="page18">箭头函数</li>
-          <li data-page="page19">对象</li>
-          <li data-page="page20">类</li>
-          <li data-page="page21">继承</li>
-          <li data-page="page22">异步编程和回调函数</li>
-          <li data-page="page23">Promise</li>
-          <li data-page="page24">异步和等待</li>
-          <li data-page="page25">变量范围</li>
-          <li data-page="page26">总结</li>
+          <li class="course-note">后续：表达式、运算符、条件、数组、字符串、循环、函数、对象与异步编程正在整理。</li>
         </ul>
       </div>
-      <div id="content">
+      <div id="content"><a class="back-home" href="./">← 返回课程首页</a>
         <!-- 初始内容 -->
         <div class="page-title">开启JavaScript之旅</div>
         <div class="start page-content">点击左侧的导航栏以查看详细信息，点击右下角💁🏻，她是你的学习助手，可以帮助你学习</div>
@@ -59,7 +42,7 @@
           <div id="vstory-container2"></div>
 
           <script>
-            
+
             const CONTAINER_ID = 'vstory-container2';
             // VStory.registerAll();
             async function loadDSL() {
@@ -371,9 +354,9 @@
                 visible: true,
                 formatMethod: (text, datum) => `${datum.percentage}%`, // 显示百分比
                 style: {
-                fill: 'white', 
-                fontSize: 14, 
-                fontWeight: 'bold' 
+                fill: 'white',
+                fontSize: 14,
+                fontWeight: 'bold'
                 },
                 }
             };
@@ -501,7 +484,7 @@
                     zIndex: 10,
                     position: {
                     top: 290,
-                    left: 700, 
+                    left: 700,
                     width: 300,
                     height: 280
                     },
@@ -633,7 +616,7 @@
                 ]
             };
             }
-        
+
 
             document.addEventListener('DOMContentLoaded', async () => {
                 if (typeof VStory === 'undefined') {
@@ -645,7 +628,7 @@
 
                     const dsl = await loadDSL();
                     console.log("DSL loaded:", dsl); // 调试
-                    
+
                     const story = new VStory.Story(dsl, {
                         dom: 'vstory-container2',
                         width: 1100,
@@ -654,11 +637,11 @@
                         scaleY: 'auto',
                         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                     });
-                    
+
                     const player = new VStory.Player(story);
                     story.init(player);
                     player.play(0);
-                    
+
                     window['story'] = story;
                     window['vstory'] = story;
                 } catch (error) {
@@ -667,17 +650,17 @@
             });
           </script>
 
-          <div id="content">特别感谢：弗拉维奥·科佩斯（Flavio Copes）及您的handbook作品</div>
+          <div id="credits">特别感谢：弗拉维奥·科佩斯（Flavio Copes）及其 handbook 作品</div>
         </div>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
               // 检查全局变量，帮助调试
-              console.log('检查全局变量:', Object.keys(window).filter(k => 
+              console.log('检查全局变量:', Object.keys(window).filter(k =>
                 k.includes('Vue') || k.includes('Element')));
-              
+
               const { createApp, ref } = Vue;
-              
+
               const app = createApp({
   setup() {
     const messages = ref([
@@ -685,16 +668,16 @@
     ]);
     const inputText = ref('');
     const isChatOpen = ref(false);
-    
+
     function toggleChat() {
       isChatOpen.value = !isChatOpen.value;
     }
-    
+
     function handleSend(text) {
       if (text.trim()) {
         const userQuestion = text.trim();
         messages.value.push({ content: userQuestion, role: 'user' });
-        
+
         setTimeout(() => {
           const answer = getAnswer(userQuestion);
           messages.value.push({
@@ -702,34 +685,34 @@
             role: 'assistant'
           });
         }, 500);
-        
+
         inputText.value = '';
       }
     }
-    
+
     function getAnswer(question) {
         const q = question.toLowerCase();
-  
+
         if (q.includes('变量') || q.includes('var') || q.includes('let') || q.includes('const')) {
             return 'JavaScript中有三种声明变量的方式：var、let和const。var是旧式声明，有变量提升；let允许重新赋值；const声明常量，不可重新赋值。';
         }
-        
+
         if (q.includes('函数') || q.includes('function')) {
             return '函数是JavaScript中的基本构建块，使用function关键字定义。箭头函数(=>)是ES6引入的简洁语法。';
         }
-        
+
         if (q.includes('对象') || q.includes('object')) {
             return 'JavaScript对象是键值对的集合，可以使用{}声明。例如：let person = {name: "John", age: 30};';
         }
-        
+
         if (q.includes('数组') || q.includes('array')) {
             return '数组是JavaScript中的有序集合，使用[]声明。例如：let fruits = ["苹果", "香蕉", "橙子"];';
         }
-        
+
         if (q.includes('循环') || q.includes('loop') || q.includes('for') || q.includes('while')) {
             return 'JavaScript中的循环有for循环、while循环、do...while循环和for...of/for...in循环等多种形式，用于重复执行代码块。';
         }
-        
+
         if (q.includes('条件') || q.includes('if') || q.includes('else')) {
             return 'JavaScript中的条件语句有if、else if和else，用于根据条件执行不同的代码块。';
         }
@@ -742,7 +725,7 @@
         // 默认回答
         return '这是个有趣的问题！JavaScript是一种灵活的脚本语言，广泛应用于Web开发。您可以问我关于变量、函数、对象、数组等方面的问题。';
     }
-    
+
     return { messages, inputText, handleSend, isChatOpen, toggleChat };
                 },
                 template: `
@@ -762,16 +745,16 @@
                         </div>
                         <div class="chat-content">
                         <el-scrollbar height="330px" class="chat-container">
-                            <div v-for="(msg, index) in messages" :key="index" 
+                            <div v-for="(msg, index) in messages" :key="index"
                                 :style="{ textAlign: msg.role === 'user' ? 'right' : 'left', margin: '8px 0' }"
                                 class="message-wrapper">
-                            <el-tag :type="msg.role === 'user' ? 'primary' : 'success'" 
+                            <el-tag :type="msg.role === 'user' ? 'primary' : 'success'"
                                     style="padding: 8px 12px; border-radius: 18px; display: inline-block; max-width: 80%; white-space: normal; word-break: break-word;">
                                 {{ msg.content }}
                             </el-tag>
                             </div>
                         </el-scrollbar>
-                        
+
                         <div style="padding: 10px 0; position: absolute; bottom: 0; left: 0; right: 0; padding: 10px;">
                             <el-input
                             placeholder="输入问题..."
@@ -787,7 +770,7 @@
                         </div>
                         </div>
                     </div>
-                    
+
                     <!-- 聊天圆圈按钮 -->
                     <div class="chat-circle" @click="toggleChat" v-if="!isChatOpen">
                         <i class="el-icon-chat-dot-round">💁🏻</i>
