@@ -10,6 +10,7 @@
 
 ## 当前内容
 
+- 编程工具：[C++ / Java 在线编译器](https://MU-ty.github.io/cs-study/compiler/)，独立页面、标准输入与基础示例，使用 OneCompiler 第三方服务；[接入说明](compiler/README.md)。
 - AI Agent：[12 单元课件导学](https://MU-ty.github.io/cs-study/agent-lab/)，依据《深入理解 AI Agent》110 页课件整理，含代码、交互轨迹、来源页码与自测；[课程说明](agent-lab/README.md)。
 - 操作系统：[8 个可视化实验](https://MU-ty.github.io/cs-study/os-lab/)，包含进程、调度、同步、死锁、内存、磁盘与文件块映射；[实现说明](os-lab/README.md)。
 - 数据结构：[10 个可视化实验](https://MU-ty.github.io/cs-study/data-structures/)，包含逐步执行、复杂度说明、30 张知识卡与 10 道自测；[实现说明](data-structures/README.md)。
