@@ -10,11 +10,12 @@
 
 ## 当前内容
 
+- AI Agent：[12 单元课件导学](https://MU-ty.github.io/cs-study/agent-lab/)，依据《深入理解 AI Agent》110 页课件整理，含代码、交互轨迹、来源页码与自测；[课程说明](agent-lab/README.md)。
 - 操作系统：[8 个可视化实验](https://MU-ty.github.io/cs-study/os-lab/)，包含进程、调度、同步、死锁、内存、磁盘与文件块映射；[实现说明](os-lab/README.md)。
 - 数据结构：[10 个可视化实验](https://MU-ty.github.io/cs-study/data-structures/)，包含逐步执行、复杂度说明、30 张知识卡与 10 道自测；[实现说明](data-structures/README.md)。
 - 计算机网络：18 章完整可视化课程。
 - JavaScript：前 8 章正文与练习，后续主题明确标为整理中。
 - CSS：选择器、盒模型、Flex、Grid、响应式和变量速查课。
-- 学习路线：五阶段目标、知识清单和完成标准。
+- 学习路线：五阶段计算机基础与 Agent 工程进阶，包含知识清单和完成标准。
 
 项目使用原生 HTML、CSS 和 JavaScript，无构建依赖，通过 GitHub Pages 发布。学习进度仅保存在浏览器本地。
