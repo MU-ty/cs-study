@@ -1,14 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS学习</title>
-</head>
-<body>
-    <div>CSS学习</div>
-    <div>特别鸣谢：弗拉维奥·科佩斯（Flavio Copes）及您的handbook作品</div>
-    <div>学习方式模仿W3.school，先学再练</div>
-    
-</body>
-</html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS 视觉基础 · CS Study</title><meta name="description" content="通过选择器、盒模型、Flex、Grid、响应式和变量六个主题快速掌握 CSS。"><link rel="icon" href="network-lab/favicon.svg"><link rel="stylesheet" href="css-course.css"></head>
+<body><header><a class="brand" href="./">← CS STUDY</a><nav aria-label="课程章节"><a href="#selector">选择器</a><a href="#box">盒模型</a><a href="#flex">Flex</a><a href="#grid">Grid</a><a href="#responsive">响应式</a><a href="#variables">变量</a></nav></header>
+<main><section class="hero"><p>CSS QUICK COURSE · 6 TOPICS</p><h1>CSS 不是“调颜色”，<br><em>而是描述页面的视觉规则。</em></h1><div class="intro"><p>从“选中谁”开始，理解元素占多大空间、如何排列，以及屏幕变化时该怎样响应。每一节只解决一个核心问题。</p><div class="legend"><span><i class="content"></i>内容</span><span><i class="padding"></i>内边距</span><span><i class="border"></i>边框</span><span><i class="margin"></i>外边距</span></div></div></section>
+<section class="lesson" id="selector"><div class="number">01</div><div><p class="eyebrow">SELECTORS</p><h2>先回答：这条样式作用于谁？</h2><p>选择器把样式规则连接到元素。优先用类表达可复用样式，用 ID 标识页面中唯一目标；组合选择器描述结构关系。</p><pre><code>p { color: #445; }          /* 标签 */
+.card { border-radius: 12px; } /* 类 */
+#hero { min-height: 60vh; }    /* ID */
+.card > h2 { margin: 0; }      /* 直接子元素 */</code></pre><aside>优先级相同时，后出现的规则覆盖前面的规则；优先级更高的选择器不受书写先后影响。</aside></div></section>
+<section class="lesson" id="box"><div class="number">02</div><div><p class="eyebrow">BOX MODEL</p><h2>页面里的每个元素，都是一个盒子</h2><div class="box-demo"><div class="m"><span>margin</span><div class="b"><span>border</span><div class="p"><span>padding</span><div class="c">content<br>240 × 80</div></div></div></div></div><p><code>box-sizing: border-box</code> 让声明的宽高包含 padding 和 border，布局计算更直观。外边距负责盒子之间的距离，内边距负责内容到边框的距离。</p></div></section>
+<section class="lesson" id="flex"><div class="number">03</div><div><p class="eyebrow">FLEXBOX</p><h2>一维排列：一行或一列</h2><pre><code>.row {
+  display: flex;
+  justify-content: space-between; /* 主轴 */
+  align-items: center;            /* 交叉轴 */
+  gap: 16px;
+}</code></pre><div class="flex-demo"><b>Logo</b><span>课程</span><span>路线</span><button>登录</button></div><p>Flex 适合导航、工具栏、卡片内部等一维关系。<code>flex-wrap: wrap</code> 可以在空间不足时换行。</p></div></section>
+<section class="lesson" id="grid"><div class="number">04</div><div><p class="eyebrow">GRID</p><h2>二维排列：同时控制行和列</h2><pre><code>.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}</code></pre><div class="grid-demo"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div><p>Grid 更适合页面区块和卡片矩阵。<code>minmax(0, 1fr)</code> 能避免内容撑破等分列。</p></div></section>
+<section class="lesson" id="responsive"><div class="number">05</div><div><p class="eyebrow">RESPONSIVE</p><h2>不是把桌面页面缩小，而是重新安排信息</h2><pre><code>@media (max-width: 720px) {
+  .cards { grid-template-columns: 1fr; }
+  .nav { display: none; }
+}</code></pre><p>优先使用弹性尺寸：<code>%</code>、<code>rem</code>、<code>fr</code>、<code>min()</code> 和 <code>clamp()</code>。媒体查询只处理真正需要变化的断点。</p><aside>在手机上检查：是否横向溢出？按钮是否容易点击？文字放大到 200% 后是否仍可读？</aside></div></section>
+<section class="lesson" id="variables"><div class="number">06</div><div><p class="eyebrow">CUSTOM PROPERTIES</p><h2>把重复的视觉决定变成设计变量</h2><pre><code>:root {
+  --brand: #167d77;
+  --space: 16px;
+  --radius: 12px;
+}
+.button {
+  background: var(--brand);
+  padding: var(--space);
+  border-radius: var(--radius);
+}</code></pre><p>变量让颜色、间距和圆角保持一致。修改一个值即可更新整个界面，也能在局部容器中覆盖变量形成主题。</p></div></section>
+<section class="playground"><div><p class="eyebrow">LIVE PLAYGROUND</p><h2>改几个值，立即观察盒子</h2><p>这段练习只修改安全的数值和颜色，不执行输入代码。</p></div><form id="controls"><label>圆角 <input id="radius" type="range" min="0" max="40" value="16"><output>16px</output></label><label>内边距 <input id="padding" type="range" min="8" max="60" value="28"><output>28px</output></label><label>颜色 <input id="color" type="color" value="#167d77"></label></form><div class="preview"><div id="demo-card"><small>INTERACTIVE CARD</small><h3>看见 CSS 的变化</h3><p>圆角改变轮廓，padding 改变内容与边框的距离，颜色形成视觉重点。</p><button>继续学习</button></div></div></section>
+</main><footer><a href="./">返回首页</a><a href="js学习.html">继续 JavaScript</a><a href="network-lab/">进入计网实验室</a></footer><script src="css-course.js"></script></body></html>

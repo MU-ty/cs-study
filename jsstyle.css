@@ -1,6 +1,6 @@
-body{
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f3f0e9;color:#17202b;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 ul{
     list-style-type: none;
 }
@@ -8,10 +8,10 @@ ul{
     position: sticky;
     top: 0;
     float: left;
-    width: 200px;
+    width: 248px;
     height: 100vh;
     overflow-y: auto;
-    background-image: linear-gradient(to right, #00b4d8, #c4e1ea);
+    background:#122437;
   }
     #nav ul {
         padding: 0;
@@ -20,23 +20,21 @@ ul{
         border-bottom: 1px solid #000;
         padding: 10px;
         text-align: center;
-        background-image: linear-gradient(to right, #00b4d8, #c4e1ea);
-        color: #fff;
-        font-size: 18px;
+        background:transparent;color:#aebccb;font-size:15px;
         font-weight: bold;
         transition: background-color 0.3s ease;
     }
     #nav ul li:hover  {
-        background-image: linear-gradient(to right, #00677c, #6a9baa);
+        background:#1b3b4d;color:#59ddcf;
     }
   #content {
-    margin-left: 200px;
+    margin-left:248px;padding:35px min(6vw,80px);max-width:1250px;
   }
 .page-title {
     text-align: center;
-    font-size: 24px;
+    font-size:32px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom:28px;color:#122437;
 }
 
 .page-title-2{
@@ -46,7 +44,7 @@ ul{
 }
 .content-title{
     font-size: 20px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 .red{
     color: red;
@@ -56,7 +54,7 @@ ul{
     text-align: center;
 }
 .page-content{
-    font-size: 20px;
+    font-size:18px;
     line-height: 1.6;
     margin: 20px;
 }
@@ -76,9 +74,13 @@ ul{
     margin-left: 200px;
   }
 
-.start-content{
-   margin-left: 30px; 
+.start-content{margin-left:0;max-width:850px;
 }
+.back-home{display:inline-block;margin-bottom:25px;color:#167d77;font-weight:700}
+.course-note{border:1px solid #35506b!important;margin:12px!important;border-radius:9px!important;font-size:13px!important;line-height:1.5!important;color:#91a5b8!important}
+#content>div,#content>p,#content>ul{overflow-wrap:anywhere}
+#html-code{max-width:900px}
+@media(max-width:760px){#nav{position:relative;float:none;width:100%;height:auto;max-height:250px}#nav ul{display:flex;overflow:auto;margin:0}#nav ul li{min-width:145px;border-bottom:0;border-right:1px solid #294057}.course-note{min-width:280px!important}#content{margin-left:0;padding:24px 16px}.page-content{font-size:16px}.tubiao{font-size:65px}#vstory-container2{display:none!important}.chat-window{width:min(350px,calc(100vw - 30px))}.start-content{margin-left:0}}
 
 .care{
     font-weight: bold;
@@ -92,21 +94,21 @@ ul{
     border-radius: 10px;
     text-align: center;
   }
-  
+
   .question-mark {
     font-size: 20px;
     margin-left: 5px;
     color: #ccc;
   }
-  
+
   form {
     margin-top: 20px;
   }
-  
+
   input[type="radio"] {
     margin-right: 10px;
   }
-  
+
   button {
     background-color: #4CAF50;
     color: white;
@@ -125,7 +127,7 @@ ul{
     bottom: 20px;
     z-index: 9999; /* 确保始终在最上层 */
   }
-  
+
   .chat-circle {
     width: 60px;
     height: 60px;
@@ -140,7 +142,7 @@ ul{
     font-size: 24px;
     transition: all 0.3s ease;
   }
-  
+
   .chat-window {
     width: 350px;
     height: 490px;
@@ -150,7 +152,7 @@ ul{
     box-shadow: 0 5px 25px rgba(0,0,0,0.2);
     margin-bottom: 15px;
   }
-  
+
   .chat-header {
     padding: 10px 15px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -159,12 +161,12 @@ ul{
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .chat-content {
     position: relative;
     height: 400px;
   }
-  
+
   .chat-container {
     padding: 10px;
     padding-bottom: 70px;
@@ -176,7 +178,7 @@ ul{
     display: flex;
     align-items: center;
   }
-  
+
   /* 最小化和关闭按钮 */
   .minimize-button, .close-button {
     color: white !important;
@@ -190,21 +192,21 @@ ul{
     justify-content: center;
     transition: all 0.3s ease;
   }
-  
+
   .minimize-button:hover, .close-button:hover {
     background-color: rgba(255,255,255,0.2) !important;
   }
-  
+
   /* 最小化按钮图标 */
   .minimize-button i {
     margin-bottom: 5px;
   }
-  
+
   /* 关闭按钮特别样式 */
   .close-button {
     background-color: rgba(255,255,255,0.1);
   }
-  
+
   .close-button:hover {
     background-color: rgba(255,0,0,0.3) !important;
   }
@@ -217,14 +219,14 @@ ul{
     text-align: left; /* 确保文本左对齐 */
     line-height: 1.5;
   }
-  
+
   /* 修复右侧消息对齐问题 */
   .chat-container > div[style*="right"] {
     display: flex;
     justify-content: flex-end;
     width: 100%;
   }
-  
+
   /* 修复左侧消息对齐问题 */
   .chat-container > div[style*="left"] {
     display: flex;
