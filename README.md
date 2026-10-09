@@ -10,6 +10,7 @@
 
 ## 当前内容
 
+- 操作系统：[8 个可视化实验](https://MU-ty.github.io/cs-study/os-lab/)，包含进程、调度、同步、死锁、内存、磁盘与文件块映射；[实现说明](os-lab/README.md)。
 - 数据结构：[10 个可视化实验](https://MU-ty.github.io/cs-study/data-structures/)，包含逐步执行、复杂度说明、30 张知识卡与 10 道自测；[实现说明](data-structures/README.md)。
 - 计算机网络：18 章完整可视化课程。
 - JavaScript：前 8 章正文与练习，后续主题明确标为整理中。
