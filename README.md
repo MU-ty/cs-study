@@ -8,6 +8,10 @@
 
 [打开计网实验室](https://MU-ty.github.io/cs-study/network-lab/)：按 18 章学习，包含中文知识卡、逐步协议演示、可操作计算实验和章节自测。覆盖封装、CRC、子网划分、路由、TCP、DNS、TLS 等内容；[项目说明与源码](network-lab/README.md)。
 
+## Redis 深度学习
+
+[进入 Redis 实验室](https://MU-ty.github.io/cs-study/redis-lab/)：26 章中文课程、18 类交互图解/实验、24 个 Redis 基础命令子集模拟与 26 道章节自测。涵盖数据结构、持久化、事务、缓存一致性、分布式锁、复制、哨兵、Cluster、Java 接入与综合项目；[课程与测试说明](redis-lab/README.md)。
+
 ## 当前内容
 
 - 编程工具：[C++ / Java 在线编译器](https://MU-ty.github.io/cs-study/compiler/)，独立页面、标准输入与基础示例，使用 OneCompiler 第三方服务；[接入说明](compiler/README.md)。
