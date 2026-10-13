@@ -14,7 +14,7 @@
 
 ## Java 深度学习
 
-[进入 Java 实验室](https://MU-ty.github.io/cs-study/java-lab/)：30 章中文核心课程，28 类交互图解/实验、30 个 Java 17 可下载示例与 30 道自测；涵盖语法、对象、泛型、异常、集合、Stream、I/O、并发、JVM、JDBC 和成绩管理项目。核心示例已实际运行核对；[课程说明](java-lab/README.md)。
+[进入 Java 实验室](https://MU-ty.github.io/cs-study/java-lab/)：30 章中文核心课程，28 类交互图解/实验、30 个 Java 17 可下载示例与 30 道自测；涵盖语法、对象、泛型、异常、集合、Stream、I/O、并发、JVM、JDBC 和成绩管理项目。另含30道编程/边界练习与可运行的完整成绩管理命令行项目（支持UTF-8文件保存和安全导入）。核心示例已实际运行核对；[课程说明](java-lab/README.md)。
 
 ## 当前内容
 
