@@ -12,6 +12,10 @@
 
 [进入 Redis 实验室](https://MU-ty.github.io/cs-study/redis-lab/)：26 章中文课程、18 类交互图解/实验、24 个 Redis 基础命令子集模拟与 26 道章节自测。涵盖数据结构、持久化、事务、缓存一致性、分布式锁、复制、哨兵、Cluster、Java 接入与综合项目；[课程与测试说明](redis-lab/README.md)。
 
+## Java 深度学习
+
+[进入 Java 实验室](https://MU-ty.github.io/cs-study/java-lab/)：30 章中文核心课程，28 类交互图解/实验、30 个 Java 17 可下载示例与 30 道自测；涵盖语法、对象、泛型、异常、集合、Stream、I/O、并发、JVM、JDBC 和成绩管理项目。核心示例已实际运行核对；[课程说明](java-lab/README.md)。
+
 ## 当前内容
 
 - 编程工具：[C++ / Java 在线编译器](https://MU-ty.github.io/cs-study/compiler/)，独立页面、标准输入与基础示例，使用 OneCompiler 第三方服务；[接入说明](compiler/README.md)。
